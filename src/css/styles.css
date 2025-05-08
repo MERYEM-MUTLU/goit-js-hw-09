@@ -1,18 +1,164 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+body {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  color: #212121;
+  line-height: 1.5;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.index {
+  height: 100vh; /* Tam ekran h. */
+  display: flex;
+  flex-direction: column; /* Dikey hizala  */
+  justify-content: center; /* Dikeyde ortala */
+  align-items: center; /* Yatayda ortala */
+  gap: 10px; /* Butonlar arası boşluk */
+  background: #978479;
+}
+
+.index a {
+  padding: 30px 60px;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #d6d2c0;
+  text-decoration: none;
+}
+
+.index a:hover {
+  transform: scale(1.02);
+}
+
+#gallery {
+  padding: 25px 0;
+  background: #e8ecee;
+}
+
+#gallery h1 {
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+}
+
+.gallery {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 tane kolon */
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-link {
+  display: block;
+  text-decoration: none;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-image:hover {
+  opacity: 0.9;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d6d2c0;
+  height: 100vh;
+}
+
+.feedback-form {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.feedback-form label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #666060;
+  font-size: 16px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #b1a8a8;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+  resize: none;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  outline: none;
+  border-color: #816eb8;
+}
+
+.feedback-form button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #816eb8;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.feedback-form button:hover {
+  background-color: #c457b2;
+}
+
+@media (min-width: 768px) {
+  .gallery {
+    padding: 0 100px;
+    gap: 16px;
+  }
+
+  .gallery-item {
+    border-radius: 8px;
+  }
+}
